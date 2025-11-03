@@ -40,5 +40,21 @@ jobs:
             pip install -r requirements.txt
           fi
 
+      - name: Build Java source files
+        if: matrix.language == 'java'
+        run: |
+          echo "Compiling Java files..."
+          mkdir -p build
+          javac -d build $(find . -name "*.java" || true)
+
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v3
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - name: Compile Java code
+        run: javac assignment1_code_sample.java
