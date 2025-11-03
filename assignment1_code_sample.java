@@ -7,7 +7,7 @@ import java.net.URL;
 import java.sql.*;
 import java.util.Scanner;
 
-public class VulnerableApp {
+class VulnerableApp {
 
     private static final String DB_URL = "jdbc:mysql://mydatabase.com/mydb";
     private static final String DB_USER = "admin";
