@@ -63,3 +63,4 @@ function saveToDb(data: string) {
     saveToDb(data);
     sendEmail('admin@example.com', 'User Input', userInput);
 })();
+
